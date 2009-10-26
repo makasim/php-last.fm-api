@@ -514,25 +514,23 @@ class Track extends Media {
 			}
 		}
 
-		if($xml->artist){
-			if($xml->artist->name && $xml->artist->mbid && $xml->artist->url){
-				$artist = new Artist(
-					Util::toString($xml->artist->name),
-					Util::toString($xml->artist->mbid),
-					Util::toString($xml->artist->url),
-					array(), 0, 0, 0, array(), array(), '', 0.0
-				);
-			}
-			else{
-				$artist = Util::toString($xml->artist);
-			}
-		}
-		else if($xml->creator){
-			$artist = Util::toString($xml->creator);
-		}
-		else{
-			$artist = '';
-		}
+	  if($xml->artist){
+      if($xml->artist->name && $xml->artist->mbid && $xml->artist->url){
+        $artist = new Artist(
+          Util::toString($xml->artist->name),
+          Util::toString($xml->artist->mbid),
+          Util::toString($xml->artist->url));
+      }
+      else{
+        $artist = new Artist(Util::toString($xml->artist), '', '');
+      }
+    }
+    else if($xml->creator){
+      $artist = new Artist(Util::toString($xml->creator), '', '');
+    }
+    else{
+      $artist = new Artist('Unknown', '', '');
+    }
 
 		if($xml->name){
 			$name = Util::toString($xml->name);

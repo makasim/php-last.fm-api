@@ -69,6 +69,13 @@ class User extends Media {
 	 * @access	private
 	 */
 	private $weight;
+	
+  /** Account home page on the last.fm site.
+   *
+   * @var float
+   * @access  private
+   */
+  private $url;
 
 	/** Possible time periods.
 	 *
@@ -112,6 +119,7 @@ class User extends Media {
 		$this->lastTrack  = $lastTrack;
 		$this->match      = $match;
 		$this->weight     = $weight;
+		$this->url        = $url;
 	}
 
 	/** Returns the users language.
@@ -194,6 +202,16 @@ class User extends Media {
 	public function getWeight(){
 		return $this->weight;
 	}
+	
+  /** 
+   * User home page url.
+   *
+   * @return  string
+   * @access  public
+   */
+  public function getUrl(){
+    return $this->url;
+  }
 
 	/** Get a list of upcoming events that this user is attending. Easily integratable into calendars, using the iCal standard.
 	 *

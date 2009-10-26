@@ -58,9 +58,9 @@ class Artist extends Media {
 	 *
 	 * @access	public
 	 */
-	public function __construct($name, $mbid, $url, array $images, $streamable,
-								$listeners, $playCount, array $tags,
-								array $similar, $biography, $match){
+	public function __construct($name, $mbid, $url, array $images = array(), $streamable = 0,
+                $listeners = 0, $playCount = 0, array $tags = array(),
+                array $similar = array(), $biography = '', $match = 0.0){
 		parent::__construct($name, $mbid, $url, $images, $listeners, $playCount);
 
 		$this->streamable = $streamable;
