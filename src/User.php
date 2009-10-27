@@ -499,6 +499,23 @@ class User extends Media {
 
 		return $shouts;
 	}
+	
+  /**
+   * Shout on this user's shoutbox 
+   * 
+   * @param string $to_user
+   * @param string $message
+   * @param Session $session
+   * 
+   * @return void
+   */
+  public static function shout($to_user, $message, $session)
+  {
+    CallerFactory::getDefaultCaller()->signedCall('user.shout', array(
+      'user'         => $to_user,
+      'message' => $message,
+    ), $session, 'POST');
+  }
 
 	/** Get the top albums listened to by a user. You can stipulate a time period. Sends the overall chart by default.
 	 *

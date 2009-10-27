@@ -39,7 +39,7 @@ class Shout {
 	public function __construct($auhtor, $date, $text){
 		$this->auhtor = $author;
 		$this->date   = $date;
-		$thus->text   = $text;
+		$this->text   = $text;
 	}
 
 	/** Returns the shouts author.
