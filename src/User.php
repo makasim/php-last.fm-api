@@ -273,11 +273,7 @@ class User extends Media {
 	 * @throws	Error
 	 */
 	public static function getInfo($session){
-		$xml = CallerFactory::getDefaultCaller()->signedCall('user.getInfo', array(
-			'user'         => $user,
-			'recenttracks' => $recenttracks,
-			'limit'        => $limit
-		), $session);
+    $xml = CallerFactory::getDefaultCaller()->signedCall('user.getInfo', array(), $session);
 
 		return User::fromSimpleXMLElement($xml);
 	}

@@ -1,3 +1,8 @@
+2009-10-29 Maksim Kotlyar <mkotlar@ukr.net>
+
+  * Fix php notices. 
+  
+
 2009-10-27 Maksim Kotlyar <mkotlar@ukr.net>
 
   * Fix Shout::__construct line 43 $thus but should be $this.
